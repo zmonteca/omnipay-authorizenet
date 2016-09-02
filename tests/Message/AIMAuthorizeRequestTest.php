@@ -34,11 +34,13 @@ class AIMAuthorizeRequestTest extends TestCase
         // Issue #38 Make sure the transactionRequest properties are correctly ordered.
         // This feels messy, but works.
         $transactionRequestProperties = array_keys(get_object_vars($data->transactionRequest));
+
         // The names of the properies of the $data->transactionRequest object, in the order in
         // which they must be defined for Authorize.Net to accept the transaction.
         $keys = array(
             "transactionType",
             "amount",
+            //"description",
             "payment",
             "customer",
             "billTo",
