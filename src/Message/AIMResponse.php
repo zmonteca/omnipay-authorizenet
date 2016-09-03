@@ -48,7 +48,13 @@ class AIMResponse extends AbstractResponse
      */
     public function getResultCode()
     {
-        return intval((string)$this->data->transactionResponse[0]->responseCode);
+        if (isset($this->data->transactionResponse[0]->responseCode)) {
+            return intval((string)$this->data->transactionResponse[0]->responseCode);
+        } else {
+            // If there is no transactionResponse element present then there was an error with authentication.
+            // Hence we can return 3 for Error
+            return 3;
+        }
     }
 
     /**
