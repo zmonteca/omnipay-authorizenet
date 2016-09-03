@@ -59,7 +59,7 @@ class AIMResponse extends AbstractResponse
 
     /**
      * A more detailed version of the Result/Response code.
-     * CHECKME: the message and error codes are NOT numeric, so the intval() provably needs to be removed.
+     * CHECKME: the message and error codes are NOT numeric, so the intval() probably needs to be removed.
      *
      * @return int|null
      */
@@ -81,6 +81,14 @@ class AIMResponse extends AbstractResponse
         }
 
         return $code;
+    }
+
+    /**
+     * @inherit
+     */
+    public function getCode()
+    {
+        return $this->getReasonCode();
     }
 
     /**
