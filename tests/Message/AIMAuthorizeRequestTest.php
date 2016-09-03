@@ -17,6 +17,7 @@ class AIMAuthorizeRequestTest extends TestCase
                 'clientIp' => '10.0.0.1',
                 'amount' => '12.00',
                 'customerId' => 'cust-id',
+                //'description' => 'Description',
                 'card' => $this->getValidCard(),
                 'duplicateWindow' => 0
             )
